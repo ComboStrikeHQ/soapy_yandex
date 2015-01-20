@@ -1,3 +1,6 @@
+require 'codeclimate-test-reporter'
+CodeClimate::TestReporter.start
+
 require 'soapy_yandex'
 require 'vcr'
 require 'rspec/intercept'
@@ -11,4 +14,6 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
 
   config.filter_sensitive_data('yandex-server') { ENV['YANDEX_SERVER'] }
+
+  config.ignore_hosts 'codeclimate.com'
 end
