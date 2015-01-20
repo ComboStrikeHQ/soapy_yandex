@@ -1,6 +1,6 @@
 # SoapyYandex
 
-TODO: Write a gem description
+Client library for Yandex Money.
 
 ## Installation
 
@@ -20,11 +20,44 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Create a new client instance
+client = SoapyYandex::MoneyClient.new(
+  ssl_cert: File.read('cert.pem'),
+  ssl_key: File.read('key.pem'),
+  remote_cert: File.read('remote_cert.pem'),
+  ssl_key_passphrase: ENV['SSL_KEY_PASSPHRASE'],
+)
+
+# Get account balance
+result = client.balance(agentId: 123)
+result.success? # => true
+result.attributes[:balance] # => '4200.00'
+
+# Test deposition
+result = client.test_deposition(
+  agentId: 123,
+  dstAccount: 321,
+  amount: BigDecimal.new(10.0, 3),
+  currency: 10643,
+  contract: 'Test deposit'
+)
+result.success? # => true
+
+# Make deposition
+result = client.make_deposition(
+  agentId: 123,
+  dstAccount: 321,
+  amount: BigDecimal.new(10.0, 3),
+  currency: 10643,
+  contract: 'Test deposit'
+)
+result.success? # => true
+```
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/soapy_yandex/fork )
+1. Fork it (https://github.com/ad2games/soapy_yandex/fork)
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
