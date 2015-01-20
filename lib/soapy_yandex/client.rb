@@ -57,7 +57,7 @@ module SoapyYandex
     end
 
     def uri_base
-      'https://' + ENV['YANDEX_SERVER']
+      'https://' + opts[:server]
     end
   end
 end

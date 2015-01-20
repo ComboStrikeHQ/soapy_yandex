@@ -11,6 +11,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     end
 
     SoapyYandex::MoneyClient.new(
+      server: ENV['YANDEX_SERVER'],
       ssl_cert: File.read(File.expand_path(cert_file,  __FILE__)),
       ssl_key: File.read(File.expand_path(key_file, __FILE__)),
       remote_cert: File.read(File.expand_path('../fixtures/keys/remote_cert.pem', __FILE__)),

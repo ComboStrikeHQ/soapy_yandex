@@ -23,6 +23,7 @@ Or install it yourself as:
 ```ruby
 # Create a new client instance
 client = SoapyYandex::MoneyClient.new(
+  server: ENV['YANDEX_SERVER'],
   ssl_cert: File.read('cert.pem'),
   ssl_key: File.read('key.pem'),
   remote_cert: File.read('remote_cert.pem'),
