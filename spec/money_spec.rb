@@ -39,7 +39,6 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     it 'returns successfully' do
       result = client.test_deposition(
         agentId: 200451,
-        clientOrderId: 12345,
         dstAccount: 4100322650604,
         amount: BigDecimal.new(10.0, 3),
         currency: 10643,
@@ -54,7 +53,6 @@ RSpec.describe 'Yandex Money Requests', :vcr do
       expect do
         client.test_deposition(
           agentId: 200451,
-          clientOrderId: 12345,
           dstAccount: 123,
           amount: BigDecimal.new(10.0, 3),
           currency: 10643,
@@ -68,7 +66,6 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     it 'returns successfully' do
       result = client.make_deposition(
         agentId: 200451,
-        clientOrderId: 12345,
         dstAccount: 4100322650604,
         amount: BigDecimal.new(10.0,  3),
         currency: 10643,
