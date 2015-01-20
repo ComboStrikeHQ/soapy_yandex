@@ -9,10 +9,6 @@ module SoapyYandex
     protected
 
     def run(request)
-      unless request.is_a?(Request)
-        raise ArgumentError, 'Request must be a SoapyYandex::Request object'
-      end
-
       http_request = HTTParty.post(
         uri_base + request.api_path,
         headers: headers,
