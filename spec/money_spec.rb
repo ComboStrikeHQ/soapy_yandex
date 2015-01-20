@@ -41,7 +41,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
         agentId: 200451,
         dstAccount: 4100322650604,
         amount: BigDecimal.new(10.0, 3),
-        currency: 10643,
+        currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
         contract: 'Test deposit'
       )
 
@@ -55,7 +55,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
           agentId: 200451,
           dstAccount: 123,
           amount: BigDecimal.new(10.0, 3),
-          currency: 10643,
+          currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
           contract: 'Test deposit'
         )
       end.to raise_error SoapyYandex::Error, 'SoapyYandex Server Error: Invalid dstAccount'
@@ -68,7 +68,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
         agentId: 200451,
         dstAccount: 4100322650604,
         amount: BigDecimal.new(10.0,  3),
-        currency: 10643,
+        currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
         contract: 'Test deposit'
       )
 

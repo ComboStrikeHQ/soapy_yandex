@@ -39,7 +39,7 @@ result = client.test_deposition(
   agentId: 123,
   dstAccount: 321,
   amount: BigDecimal.new(10.0, 3),
-  currency: 10643,
+  currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
   contract: 'Test deposit'
 )
 result.success? # => true
@@ -49,7 +49,7 @@ result = client.make_deposition(
   agentId: 123,
   dstAccount: 321,
   amount: BigDecimal.new(10.0, 3),
-  currency: 10643,
+  currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
   contract: 'Test deposit'
 )
 result.success? # => true

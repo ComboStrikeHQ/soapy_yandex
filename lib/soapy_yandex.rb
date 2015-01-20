@@ -11,4 +11,5 @@ require 'soapy_yandex/client'
 require 'soapy_yandex/money_client'
 
 module SoapyYandex
+  CURRENCY_DEMO_RUBLES = 10643
 end
