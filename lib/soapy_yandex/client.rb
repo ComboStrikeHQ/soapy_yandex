@@ -53,7 +53,7 @@ module SoapyYandex
     end
 
     def sign(payload)
-      OpenSSL::PKCS7::sign(ssl_cert, ssl_key, payload, [], OpenSSL::PKCS7::BINARY).to_s
+      OpenSSL::PKCS7.sign(ssl_cert, ssl_key, payload, [], OpenSSL::PKCS7::BINARY).to_s
     end
 
     def headers

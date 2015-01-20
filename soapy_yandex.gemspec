@@ -6,8 +6,8 @@ require 'soapy_yandex/version'
 Gem::Specification.new do |spec|
   spec.name          = 'soapy_yandex'
   spec.version       = SoapyYandex::VERSION
-  spec.authors       = ['Niko Dziemba']
-  spec.email         = ['niko@dziemba.com']
+  spec.authors       = ['ad2games GmbH']
+  spec.email         = ['developers@ad2games.com']
   spec.summary       = %q{Client library for Yandex Money.}
   spec.description   = %q{Client library for Yandex Money.}
   spec.homepage      = ''
