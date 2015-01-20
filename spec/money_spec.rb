@@ -41,13 +41,26 @@ RSpec.describe 'Yandex Money Requests', :vcr do
         agentId: 200451,
         clientOrderId: 12345,
         dstAccount: 4100322650604,
-        amount: BigDecimal.new(10.0,  3),
+        amount: BigDecimal.new(10.0, 3),
         currency: 10643,
         contract: 'Test deposit'
       )
 
       expect(result.success?).to be_truthy
       expect(result.attributes[:clientOrderId]).to eq('12345')
+    end
+
+    it 'raises when given invalid data' do
+      expect do
+        client.test_deposition(
+          agentId: 200451,
+          clientOrderId: 12345,
+          dstAccount: 123,
+          amount: BigDecimal.new(10.0, 3),
+          currency: 10643,
+          contract: 'Test deposit'
+        )
+      end.to raise_error SoapyYandex::Error, 'SoapyYandex Server Error: Invalid dstAccount'
     end
   end
 

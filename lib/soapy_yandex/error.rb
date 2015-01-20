@@ -3,6 +3,30 @@ module SoapyYandex
   end
 
   class ServerError < Error
+    ERROR_MESSAGES = {
+      10 => 'XML parse error',
+      11 => 'Invalid agendId',
+      12 => 'Invalid subAgentId',
+      14 => 'Invalid currency',
+      15 => 'Invalid requestDT',
+      16 => 'Invalid dstAccount',
+      17 => 'Invalid amount',
+      18 => 'Invalid clientOrderId',
+      19 => 'Invalid contract',
+      21 => 'Operation not available',
+      26 => 'There was already a transaction with this clientOrderId',
+      50 => 'Unable to read signed message',
+      51 => 'Signature verification failed',
+      53 => 'Signed by unknown certificate',
+      40 => 'User account closed',
+      41 => 'User account blocked',
+      42 => 'Payee identifier does not exist',
+      43 => 'Amount too big',
+      44 => 'Too many transactions in timeframe',
+      45 => 'Not enough funds',
+      46 => 'Amount too small',
+    }
+
     attr_reader :error_code
 
     def initialize(error_code)
@@ -10,30 +34,7 @@ module SoapyYandex
     end
 
     def error_code_string
-      case error_code
-      when 10 then 'XML parse error'
-      when 11 then 'Invalid agendId'
-      when 12 then 'Invalid subAgentId'
-      when 14 then 'Invalid currency'
-      when 15 then 'Invalid requestDT'
-      when 16 then 'Invalid dstAccount'
-      when 17 then 'Invalid amount'
-      when 18 then 'Invalid clientOrderId'
-      when 19 then 'Invalid contract'
-      when 21 then 'Operation not available'
-      when 26 then 'There was already a transaction with this clientOrderId'
-      when 50 then 'Unable to read signed message'
-      when 51 then 'Signature verification failed'
-      when 53 then 'Signed by unknown certificate'
-      when 40 then 'User account closed'
-      when 41 then 'User account blocked'
-      when 42 then 'Payee identifier does not exist'
-      when 43 then 'Amount too big'
-      when 44 then 'Too many transactions in timeframe'
-      when 45 then 'Not enough funds'
-      when 46 then 'Amount too small'
-      else 'Unknown error'
-      end
+      ERROR_MESSAGES.fetch(error_code, 'Unknown error')
     end
 
     def to_s

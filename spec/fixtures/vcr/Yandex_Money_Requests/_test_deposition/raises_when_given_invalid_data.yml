@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://yandex-server/webservice/deposition/api/testDeposition
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        -----BEGIN PKCS7-----
+        MIIIAwYJKoZIhvcNAQcCoIIH9DCCB/ACAQExCzAJBgUrDgMCGgUAMIHjBgkqhkiG
+        9w0BBwGggdUEgdI8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/
+        Pgo8dGVzdERlcG9zaXRpb25SZXF1ZXN0IGFnZW50SWQ9IjIwMDQ1MSIgY2xpZW50
+        T3JkZXJJZD0iMiIgZHN0QWNjb3VudD0iMTIzIiBhbW91bnQ9IjEwLjAwIiBjdXJy
+        ZW5jeT0iMTA2NDMiIGNvbnRyYWN0PSJUZXN0IGRlcG9zaXQiIHJlcXVlc3REVD0i
+        MjAxNS0wMS0xOVQwMDowMDowMCswMDowMCIvPgqgggSZMIIElTCCA/6gAwIBAgIK
+        E93ALgACAAA6BDANBgkqhkiG9w0BAQUFADBJMQswCQYDVQQGEwJSVTEYMBYGA1UE
+        ChMPUFMgWWFuZGV4Lk1vbmV5MSAwHgYDVQQDExdZYW5kZXggTW9uZXkgSXNzdWlu
+        ZyBDQTAeFw0xNDExMTAxMzQyMjFaFw0xNTExMTAxMzQyMjFaMH0xCzAJBgNVBAYT
+        AkRFMRAwDgYDVQQIEwdHZXJtYW55MRYwFAYDVQQKEw1hZDJnYW1lcyBHbWJIMR8w
+        HQYDVQQDExYvYnVzaW5lc3MvYWQyZ2FtZXNnbWJoMSMwIQYJKoZIhvcNAQkBFhRm
+        aW5hbmNlQGFkMmdhbWVzLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoC
+        ggEBAMvHkV/KPUcxuHruB9b+3S3kCldVTa/kIZQs3xPGLy48Z9vP8sfz3IN3ruBF
+        KnOT54KDdMY9GIa7/IXUTPCvjxL295RdN/LdfjEG9rbKY5KPJxCTMkpO8e4o36CG
+        samuhVGp76K6Exh060ADdIL8BsE5MgNz0V/HPiXg2VrtIPCZJb5wY9ea++iqSok7
+        uhrLOUCNhan4K8qowPUhQuA4obb8qAgB1ZgQim3WPBINK8oFJd6Rk7ru+w3Vp1rT
+        lzzihnDqKB+KvA/SA+ejcWCuPeL/lhiCzq8n4AtXg4SSyR9XQ/HSb3S288DvtMbo
+        tKH7jBCoWLBIJsLiPaukHNWx3bMCAwEAAaOCAcowggHGMB0GA1UdDgQWBBQwfCVg
+        s3Ya47KrcDaJJghxP63fEjAfBgNVHSMEGDAWgBTmLOeIVWnILDo9dmAW41baXjKS
+        3DA1BgNVHR8ELjAsMCqgKKAmhiRodHRwOi8vY3Jscy55YW1vbmV5LnJ1L2lzc3Vp
+        bmdjYS5jcmwwgc4GCCsGAQUFBwEBBIHBMIG+MIG7BggrBgEFBQcwAoaBrmxkYXA6
+        Ly8vQ049WWFuZGV4JTIwTW9uZXklMjBJc3N1aW5nJTIwQ0EsQ049QUlBLENOPVB1
+        YmxpYyUyMEtleSUyMFNlcnZpY2VzLENOPVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRp
+        b24sREM9eWFtb25leSxEQz1ydT9jQUNlcnRpZmljYXRlP2Jhc2U/b2JqZWN0Q2xh
+        c3M9Y2VydGlmaWNhdGlvbkF1dGhvcml0eTALBgNVHQ8EBAMCBaAwPQYJKwYBBAGC
+        NxUHBDAwLgYmKwYBBAGCNxUIhNPQNYT06hSDyY0lh++3M4S2zAGBZ4KU1Uf4llEC
+        AWQCAQswEwYDVR0lBAwwCgYIKwYBBQUHAwIwGwYJKwYBBAGCNxUKBA4wDDAKBggr
+        BgEFBQcDAjANBgkqhkiG9w0BAQUFAAOBgQAgvoyUDEz5NBJdCVHxTtPssAVYxyzT
+        IkF+Tc6M+F5QRiOzJhVj56VjSFIjx3mXha/adaQXUK/WzLrnnXK2c2pxbYIvJT/M
+        +JhoSZ3WejQ/KTpIYtAgR7TnJsGg1yki+R8KiCexFjwZTSPRA5UgWcF2AC7PmVv1
+        dAiDtYzlK5Fh1jGCAlkwggJVAgEBMFcwSTELMAkGA1UEBhMCUlUxGDAWBgNVBAoT
+        D1BTIFlhbmRleC5Nb25leTEgMB4GA1UEAxMXWWFuZGV4IE1vbmV5IElzc3Vpbmcg
+        Q0ECChPdwC4AAgAAOgQwCQYFKw4DAhoFAKCB2DAYBgkqhkiG9w0BCQMxCwYJKoZI
+        hvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNTAxMjAwOTM3MTZaMCMGCSqGSIb3DQEJ
+        BDEWBBSnSb1GpJ+gSBUXuYDJLUJfprFYaDB5BgkqhkiG9w0BCQ8xbDBqMAsGCWCG
+        SAFlAwQBKjALBglghkgBZQMEARYwCwYJYIZIAWUDBAECMAoGCCqGSIb3DQMHMA4G
+        CCqGSIb3DQMCAgIAgDANBggqhkiG9w0DAgIBQDAHBgUrDgMCBzANBggqhkiG9w0D
+        AgIBKDANBgkqhkiG9w0BAQEFAASCAQC8F4uvvx1xGH/ZwnnLgei6OObQ9IQqNB0m
+        KD8p7PyUKaEBY7GPk3+/IudnJmyUAiaTVYtn0CdarfE8ZkZ2YjA91AxjAgPD6YS4
+        fSffkEnmxtAzj4e6MiON/xvzMmkLMukzWKjmmuCAAqc2Dejjr/b46vAsx6M60j2z
+        mVhmQWylJtIPvHvmj5IBWctuHCTlTE72j7n2WYW9VeiAdWKZ1RUr9aGofUHxFsf6
+        X+sfrvBFi7K/C/OToWDvIDxAav8KpbwR9lBdmBdDAqXc50lQ7jqnbRM124NlpljC
+        bVH5akYN3twpRebEXImdhyirpVnPlnYP9SFh4zvZfdj3hU0EeMkG
+        -----END PKCS7-----
+    headers:
+      Content-Type:
+      - application/pkcs7-mime
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 20 Jan 2015 09:37:16 GMT
+      Expires:
+      - Thu, 01 Jan 1970 00:00:00 GMT
+      Cache-Control:
+      - no-cache
+      Content-Type:
+      - application/pkcs7-mime
+      Content-Length:
+      - '1050'
+    body:
+      encoding: UTF-8
+      string: |
+        -----BEGIN PKCS7-----
+        MIAGCSqGSIb3DQEHAqCAMIACAQExCzAJBgUrDgMCGgUAMIAGCSqGSIb3DQEHAaCA
+        JIAEgZg8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCI/Pg0KPHRl
+        c3REZXBvc2l0aW9uUmVzcG9uc2UgY2xpZW50T3JkZXJJZD0iMiIgc3RhdHVzPSIz
+        IiBlcnJvcj0iMTYiIHByb2Nlc3NlZERUPSIyMDE1LTAxLTIwVDEyOjM3OjE2Ljk1
+        NiswMzowMCIgLz4NCgAAAAAAADGCAgswggIHAgEBMIGEMHwxCzAJBgNVBAYTAlJV
+        MQ8wDQYDVQQIEwZSdXNzaWExGTAXBgNVBAcTEFNhaW50LVBldGVyc2J1cmcxGDAW
+        BgNVBAoTD1BTIFlhbmRleC5Nb25leTEQMA4GA1UECxMHVW5rbm93bjEVMBMGA1UE
+        AxMMWWFuZGV4Lk1vbmV5AgRND18oMAkGBSsOAwIaBQCgXTAYBgkqhkiG9w0BCQMx
+        CwYJKoZIhvcNAQcBMBwGCSqGSIb3DQEJBTEPFw0xNTAxMjAwOTM3MTZaMCMGCSqG
+        SIb3DQEJBDEWBBTmp+NzUcVQqg5jpR3cPhcd4IwihTANBgkqhkiG9w0BAQEFAASC
+        AQBF3mcO6WH7UQI5DRK71/AAAO9KRdrSg60ocxTfI+RwgHySUXYHyCOzcqiTq8VP
+        YkStsEos/Cfcxeullb+0Nj424x7uCZMBpA0v/72r0ekfNMD2EAnjnQD71zGjBpEV
+        BdmrJ+9TlxlhXPZ13iyNvQh7RZdSqFh+wDtokao2jeAqtCs6HxZL8CbDAj6Cbmw3
+        5tYzGY/dBQvT58Qf99QuftlaoXzNptOaDTH7GD2g1sEbTdXli7OdUE24tfYtPYB8
+        gN53NkBdJL9g40hx+G670E/mdswRv0myKqd2d0bKXeyZsiJ+OXhATFjwY0PoMsHK
+        oCT4GFgevhiBIhyieQGPV/bHAAAAAAAA
+        -----END PKCS7-----
+    http_version: 
+  recorded_at: Mon, 19 Jan 2015 00:00:00 GMT
+recorded_with: VCR 2.9.3
