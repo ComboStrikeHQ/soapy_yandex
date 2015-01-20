@@ -1,4 +1,6 @@
 RSpec.describe 'Yandex Money Requests', :vcr do
+  random_mock = 0
+
   around { |example| Timecop.freeze(Time.utc(2015, 01, 19), &example) }
 
   let(:client) do
@@ -31,8 +33,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     end
 
     allow(SecureRandom).to receive(:hex) do
-      $random ||= 0
-      $random += 1
+      random_mock += 1
     end
   end
 

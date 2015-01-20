@@ -31,8 +31,8 @@ module SoapyYandex
     private
 
     def format_amount(args)
-      raise 'Amount must be a BigDecimal' unless args[:amount].is_a?(BigDecimal)
-      args[:amount] = '%0.2f' % args[:amount]
+      fail Error, 'Amount must be a BigDecimal' unless args[:amount].is_a?(BigDecimal)
+      args[:amount] = format('%0.2f', args[:amount])
     end
   end
 end

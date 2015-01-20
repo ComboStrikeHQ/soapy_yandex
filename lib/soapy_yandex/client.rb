@@ -24,11 +24,11 @@ module SoapyYandex
     def extract_response(body)
       message = OpenSSL::PKCS7.new(body)
       unless message.verify([remote_cert], empty_cert_store, nil, OpenSSL::PKCS7::NOVERIFY)
-        fail Error.new('Response signature verification failed')
+        fail Error, 'Response signature verification failed'
       end
 
       response = Response.new(message.data)
-      raise ServerError.new(response.error_code) if response.error?
+      fail ServerError, response.error_code if response.error?
       response
     end
 

@@ -8,14 +8,14 @@ Gem::Specification.new do |spec|
   spec.version       = SoapyYandex::VERSION
   spec.authors       = ['ad2games GmbH']
   spec.email         = ['developers@ad2games.com']
-  spec.summary       = %q{Client library for Yandex Money.}
-  spec.description   = %q{Client library for Yandex Money.}
+  spec.summary       = 'Client library for Yandex Money.'
+  spec.description   = 'Client library for Yandex Money.'
   spec.homepage      = ''
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
-  spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
+  spec.executables   = spec.files.grep(/^bin\//) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(/^(test|spec|features)\//)
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'ox', '~> 2.1'
