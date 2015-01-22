@@ -1,7 +1,5 @@
 module SoapyYandex
   class Client
-    attr_reader :opts
-
     def initialize(opts)
       @opts = opts
     end
@@ -20,6 +18,8 @@ module SoapyYandex
     end
 
     private
+
+    attr_reader :opts
 
     def extract_response(body)
       message = OpenSSL::PKCS7.new(body)

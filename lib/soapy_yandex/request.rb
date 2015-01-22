@@ -1,6 +1,6 @@
 module SoapyYandex
   class Request
-    attr_reader :api_path, :name, :attributes
+    attr_reader :api_path
 
     def initialize(api_path, name, attributes)
       @api_path = api_path
@@ -13,6 +13,8 @@ module SoapyYandex
     end
 
     private
+
+    attr_reader :name, :attributes
 
     def xml
       Ox::Document.new(version: '1.0', encoding: 'UTF-8').tap do |doc|
