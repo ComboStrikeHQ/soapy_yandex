@@ -12,4 +12,5 @@ require 'soapy_yandex/version'
 
 module SoapyYandex
   CURRENCY_DEMO_RUBLES = 10643
+  CURRENCY_RUBLES = 643
 end
