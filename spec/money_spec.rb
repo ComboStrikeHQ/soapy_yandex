@@ -22,12 +22,12 @@ RSpec.describe 'Yandex Money Requests', :vcr do
   end
 
   before :each do
-    intercept(OpenSSL::PKCS7, :sign) do  |method, cert, key, payload, *args|
-      hash = Digest::SHA256.hexdigest(payload)
+    expect(OpenSSL::PKCS7).to receive(:sign).and_wrap_original do |method, cert, key, body, *args|
+      hash = Digest::SHA256.hexdigest(body)
       file = "spec/fixtures/ssl/#{hash}"
       next File.read(file) if File.exist?(file)
 
-      result = method.call(cert, key, payload, *args)
+      result = method.call(cert, key, body, *args)
       File.open(file, 'w+') { |f| f.write(result) }
       result
     end

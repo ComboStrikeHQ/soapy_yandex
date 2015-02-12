@@ -3,7 +3,6 @@ CodeClimate::TestReporter.start
 
 require 'soapy_yandex'
 require 'vcr'
-require 'rspec/intercept'
 require 'timecop'
 
 ENV['YANDEX_SERVER'] ||= 'yandex-server'
