@@ -60,7 +60,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
           currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
           contract: 'Test deposit'
         )
-      end.to raise_error SoapyYandex::Error, 'SoapyYandex Server Error: Invalid dstAccount'
+      end.to raise_error SoapyYandex::Error, 'Invalid dstAccount'
     end
   end
 

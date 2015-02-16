@@ -33,12 +33,8 @@ module SoapyYandex
       @error_code = error_code
     end
 
-    def error_code_string
+    def message
       ERROR_MESSAGES.fetch(error_code, 'Unknown error')
-    end
-
-    def to_s
-      "SoapyYandex Server Error: #{error_code_string}"
     end
   end
 end
