@@ -24,7 +24,7 @@ module SoapyYandex
       43 => 'Amount too big',
       44 => 'Too many transactions in timeframe',
       45 => 'Not enough funds',
-      46 => 'Amount too small',
+      46 => 'Amount too small'
     }
 
     attr_reader :error_code

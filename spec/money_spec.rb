@@ -17,7 +17,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
       ssl_cert: File.read(File.expand_path(cert_file,  __FILE__)),
       ssl_key: File.read(File.expand_path(key_file, __FILE__)),
       remote_cert: File.read(File.expand_path('../fixtures/keys/remote_cert.pem', __FILE__)),
-      ssl_key_passphrase: ENV['PASSPHRASE'],
+      ssl_key_passphrase: ENV['PASSPHRASE']
     )
   end
 
