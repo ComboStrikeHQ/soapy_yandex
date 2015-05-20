@@ -1,8 +1,8 @@
 # SoapyYandex
 
-[![Circle CI](https://circleci.com/gh/ad2games/soapy_yandex/tree/master.svg?style=svg&circle-token=8be9c1e0316a8b902677fde68be9587af8926915)](https://circleci.com/gh/ad2games/soapy_yandex/tree/master)
-[![Code Climate](https://codeclimate.com/repos/54b7e4e9695680436f000d5d/badges/70ac279dcc117a7ea246/gpa.svg)](https://codeclimate.com/repos/54b7e4e9695680436f000d5d/feed)
-[![Test Coverage](https://codeclimate.com/repos/54b7e4e9695680436f000d5d/badges/70ac279dcc117a7ea246/coverage.svg)](https://codeclimate.com/repos/54b7e4e9695680436f000d5d/feed)
+[![Circle CI](https://circleci.com/gh/ad2games/soapy_yandex.svg?style=svg)](https://circleci.com/gh/ad2games/soapy_yandex)
+[![Code Climate](https://codeclimate.com/github/ad2games/soapy_yandex/badges/gpa.svg)](https://codeclimate.com/github/ad2games/soapy_yandex)
+[![Test Coverage](https://codeclimate.com/github/ad2games/soapy_yandex/badges/coverage.svg)](https://codeclimate.com/github/ad2games/soapy_yandex/coverage)
 
 Client library for Yandex Money.
 
