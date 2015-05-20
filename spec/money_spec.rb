@@ -14,7 +14,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
 
     SoapyYandex::MoneyClient.new(
       server: ENV['YANDEX_SERVER'],
-      ssl_cert: File.read(File.expand_path(cert_file,  __FILE__)),
+      ssl_cert: File.read(File.expand_path(cert_file, __FILE__)),
       ssl_key: File.read(File.expand_path(key_file, __FILE__)),
       remote_cert: File.read(File.expand_path('../fixtures/keys/remote_cert.pem', __FILE__)),
       ssl_key_passphrase: ENV['PASSPHRASE']
@@ -69,7 +69,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
       result = client.make_deposition(
         agentId: 200451,
         dstAccount: 4100322650604,
-        amount: BigDecimal.new(10.0,  3),
+        amount: BigDecimal.new(10.0, 3),
         currency: SoapyYandex::CURRENCY_DEMO_RUBLES,
         contract: 'Test deposit'
       )
