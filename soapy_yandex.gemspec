@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'ox', '~> 2.1'
-  spec.add_runtime_dependency 'httparty', '~> 0.13'
+  spec.add_runtime_dependency 'ox'
+  spec.add_runtime_dependency 'httparty'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'rake'
