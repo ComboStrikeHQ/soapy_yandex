@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module SoapyYandex
   class MoneyClient < Client
     def test_deposition(args)
@@ -31,7 +32,7 @@ module SoapyYandex
     private
 
     def format_amount(args)
-      fail Error, 'Amount must be a BigDecimal' unless args[:amount].is_a?(BigDecimal)
+      raise Error, 'Amount must be a BigDecimal' unless args[:amount].is_a?(BigDecimal)
       args[:amount] = format('%0.2f', args[:amount])
     end
   end

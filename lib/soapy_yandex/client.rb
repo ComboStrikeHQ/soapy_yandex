@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module SoapyYandex
   class Client
     def initialize(opts)
@@ -24,11 +25,11 @@ module SoapyYandex
     def extract_response(body)
       message = OpenSSL::PKCS7.new(body)
       unless message.verify([remote_cert], empty_cert_store, nil, OpenSSL::PKCS7::NOVERIFY)
-        fail Error, 'Response signature verification failed'
+        raise Error, 'Response signature verification failed'
       end
 
       response = Response.new(message.data)
-      fail ServerError, response.error_code if response.error?
+      raise ServerError, response.error_code if response.error?
       response
     end
 
