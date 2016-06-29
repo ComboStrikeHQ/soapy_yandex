@@ -13,4 +13,8 @@ require 'soapy_yandex/version'
 module SoapyYandex
   CURRENCY_DEMO_RUBLES = 10643
   CURRENCY_RUBLES = 643
+
+  def self.root
+    Pathname.new(File.expand_path(File.join(__FILE__, '..', '..')))
+  end
 end
