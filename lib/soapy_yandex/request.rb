@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module SoapyYandex
   class Request
     attr_reader :api_path

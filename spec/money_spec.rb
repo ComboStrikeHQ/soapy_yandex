@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 RSpec.describe 'Yandex Money Requests', :vcr do
   random_mock = 0
 
