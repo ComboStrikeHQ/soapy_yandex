@@ -11,7 +11,7 @@ module SoapyYandex
       http_request = HTTParty.post(
         uri_base + request.api_path,
         headers: headers,
-        ssl_ca_file: ca_file,
+        verify_peer: false,
         pem: ssl_cert.to_pem + ssl_key.to_pem,
         body: sign(request.to_s)
       )
@@ -51,10 +51,6 @@ module SoapyYandex
 
     def sign(payload)
       OpenSSL::PKCS7.sign(ssl_cert, ssl_key, payload, [], OpenSSL::PKCS7::BINARY).to_s
-    end
-
-    def ca_file
-      SoapyYandex.root.join('YMchain.pem').to_s
     end
 
     def headers
