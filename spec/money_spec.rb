@@ -2,7 +2,7 @@
 RSpec.describe 'Yandex Money Requests', :vcr do
   random_mock = 0
 
-  around { |example| Timecop.freeze(Time.utc(2015, 01, 19), &example) }
+  around { |example| Timecop.freeze(Time.utc(2015, 1, 19), &example) }
 
   let(:client) do
     if ENV['USE_REAL_CERTS']
@@ -22,7 +22,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     )
   end
 
-  before :each do
+  before do
     expect(OpenSSL::PKCS7).to receive(:sign).and_wrap_original do |method, cert, key, body, *args|
       hash = Digest::SHA256.hexdigest(body)
       file = "spec/fixtures/ssl/#{hash}"

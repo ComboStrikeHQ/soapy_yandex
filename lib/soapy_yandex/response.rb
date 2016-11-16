@@ -8,7 +8,7 @@ module SoapyYandex
     end
 
     def success?
-      attributes[:status].to_i == 0
+      attributes[:status].to_i.zero?
     end
 
     def error?
