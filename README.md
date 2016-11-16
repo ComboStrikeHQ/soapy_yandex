@@ -24,6 +24,10 @@ Or install it yourself as:
 
 ## Usage
 
+First, set up the required SSL certificates as described
+[here](https://tech.yandex.com/money/doc/payment-solution/ssl-docpage/).
+
+
 ```ruby
 # Create a new client instance
 client = SoapyYandex::MoneyClient.new(
