@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module SoapyYandex
   class Client
     def initialize(opts)
@@ -7,21 +8,25 @@ module SoapyYandex
 
     protected
 
+    # rubocop:disable Metrics/AbcSize
     def run(request)
       http_request = HTTParty.post(
         uri_base + request.api_path,
         headers: headers,
         ssl_ca_file: ca_file,
         pem: ssl_cert.to_pem + ssl_key.to_pem,
-        body: sign(request.to_s)
+        body: sign(request.to_s),
+        logger: opts[:logger]
       )
       extract_response(http_request.body)
     end
+    # rubocop:enable Metrics/AbcSize
 
     private
 
     attr_reader :opts
 
+    # rubocop:disable Metrics/MethodLength
     def extract_response(body)
       message = OpenSSL::PKCS7.new(body)
       unless message.verify([remote_cert], empty_cert_store, nil, OpenSSL::PKCS7::NOVERIFY)
@@ -39,6 +44,7 @@ module SoapyYandex
       end
       raise
     end
+    # rubocop:enable Metrics/MethodLength
 
     def empty_cert_store
       @empty_cert_store ||= OpenSSL::X509::Store.new

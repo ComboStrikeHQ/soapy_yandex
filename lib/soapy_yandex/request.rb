@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module SoapyYandex
   class Request
     attr_reader :api_path
@@ -25,7 +26,7 @@ module SoapyYandex
 
     def default_attributes
       {
-        requestDT: DateTime.now.to_s,
+        requestDT: Time.now.to_s,
         clientOrderId: SecureRandom.hex(12)
       }
     end
