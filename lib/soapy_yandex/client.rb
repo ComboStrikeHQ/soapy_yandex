@@ -8,7 +8,7 @@ module SoapyYandex
 
     protected
 
-    # rubocop:disable Metrics/AbcSize
+    # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
     def run(request)
       http_request = HTTParty.post(
         uri_base + request.api_path,
@@ -16,11 +16,13 @@ module SoapyYandex
         ssl_ca_file: ca_file,
         pem: ssl_cert.to_pem + ssl_key.to_pem,
         body: sign(request.to_s),
-        logger: opts[:logger]
+        logger: opts[:logger],
+        log_level: :debug,
+        log_format: :curl
       )
       extract_response(http_request.body)
     end
-    # rubocop:enable Metrics/AbcSize
+    # rubocop:enable Metrics/AbcSize, Metrics/MethodLength
 
     private
 
