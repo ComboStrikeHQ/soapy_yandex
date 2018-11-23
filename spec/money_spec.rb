@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 RSpec.describe 'Yandex Money Requests', :vcr do
   random_mock = 0
 
@@ -23,7 +24,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
   end
 
   before do
-    expect(OpenSSL::PKCS7).to receive(:sign).and_wrap_original do |method, cert, key, body, *args|
+    allow(OpenSSL::PKCS7).to receive(:sign).and_wrap_original do |method, cert, key, body, *args|
       hash = Digest::SHA256.hexdigest(body)
       file = "spec/fixtures/ssl/#{hash}"
       next File.read(file) if File.exist?(file)
@@ -48,7 +49,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
         contract: 'Test deposit'
       )
 
-      expect(result.success?).to be_truthy
+      expect(result).to be_success
       expect(result.attributes[:clientOrderId]).to eq('12345')
     end
 
@@ -75,7 +76,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
         contract: 'Test deposit'
       )
 
-      expect(result.success?).to be_truthy
+      expect(result).to be_success
       expect(result.attributes[:clientOrderId]).to eq('12345')
     end
   end
@@ -84,7 +85,7 @@ RSpec.describe 'Yandex Money Requests', :vcr do
     it 'returns the balance amount' do
       result = client.balance(agentId: 200451)
 
-      expect(result.success?).to be_truthy
+      expect(result).to be_success
       expect(result.attributes[:balance]).to eq('-10.00')
     end
   end

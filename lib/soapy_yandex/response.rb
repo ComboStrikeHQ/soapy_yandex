@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module SoapyYandex
   class Response
     attr_reader :xml

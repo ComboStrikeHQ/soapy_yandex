@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module SoapyYandex
   class MoneyClient < Client
     def test_deposition(args)
