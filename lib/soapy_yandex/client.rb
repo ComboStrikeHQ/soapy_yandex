@@ -15,10 +15,7 @@ module SoapyYandex
         headers: headers,
         ssl_ca_file: ca_file,
         pem: ssl_cert.to_pem + ssl_key.to_pem,
-        body: sign(request.to_s),
-        logger: opts[:logger],
-        log_level: :debug,
-        log_format: :curl
+        body: sign(request.to_s)
       )
       extract_response(http_request.body)
     end
@@ -38,13 +35,6 @@ module SoapyYandex
       response = Response.new(message.data)
       raise ServerError, response.error_code if response.error?
       response
-    rescue ArgumentError => e
-      if e.message.match?('Could not parse the PKCS7: nested asn1 error')
-        Bugsnag.notify(e) do |report|
-          report.add_tab('yandex_response', body)
-        end
-      end
-      raise
     end
     # rubocop:enable Metrics/MethodLength
 
